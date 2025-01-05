@@ -1,15 +1,17 @@
+import HomePage from "../fixtures/pom/homepage";
 const text = "We are not coders, we're true engineers and specialized experts with a deep understanding of languages and frameworks necessary to build the next-gen apps and platforms.";
-const supportEmail = "support@valor-software.com"
+const supportEmail = "support@valor-software.com";
+const name = "Dima Shekhovtsov, GDE";
+
+
 describe("Homepage", () => {
   beforeEach(() => {
     cy.visit("/");
   });
 
-  it("Verifying the text and the name on the homepage", () => {
-    cy.get("._buttons_tof5b_16 > :nth-child(3)").click();
-    cy.wait(2000);
-    cy.get(".subtitle").should("have.text", text);
-    cy.get('[class="_image-container_6splr_30"]').should("contain.text", "Dima Shekhovtsov, GDE")
+  it.only("Verifying the text and the name on the homepage", () => {
+    HomePage.verifyTheText(text);
+    HomePage.verifyTheName(name);
   });
 
   it("Should verify the lenght of the pages in the side-bar", () => {
@@ -23,7 +25,7 @@ describe("Homepage", () => {
     cy.contains(supportEmail).should("be.visible");
   });
 
-  it.only("Should navigate to the Blog section and verify the first listing", () => {
+  it("Should navigate to the Blog section and verify the first listing", () => {
     cy.get("._buttons_tof5b_16 > :nth-child(3)").click();
     cy.wait(2000);
     cy.get(".hamburger-react").click({force:true});
