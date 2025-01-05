@@ -9,7 +9,7 @@ describe("Homepage", () => {
     cy.visit("/");
   });
 
-  it.only("Verifying the text and the name on the homepage", () => {
+  it("TC01, Verifying the text and the name on the homepage", () => {
     HomePage.verifyTheText(text);
     HomePage.verifyTheName(name);
   });
