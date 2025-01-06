@@ -1,4 +1,14 @@
 {
+  "name": "cypress-project",
+  "version": "1.0.0",
+  "description": "A project to run end-to-end tests with Cypress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "open": "cypress open"
+  },
+  "author": "Maksym Semiankiv",
+  "license": "MIT",
   "devDependencies": {
     "cypress": "^13.17.0"
   }
