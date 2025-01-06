@@ -2,9 +2,9 @@ name: Cypress Tests
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 
 jobs:
   test:
@@ -12,29 +12,16 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22.7.0' # Update if needed
+          node-version: '22.7.0'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm ci
 
-      - name: Install Cypress
-        run: npx cypress install
-
-      - name: Run Cypress tests
+      - name: Run Cypress Tests
         run: npx cypress run
-
-      - name: Upload Cypress artifacts
-        if: always() # Ensure this step runs even if no failures occur
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-artifacts
-          path: |
-            cypress/screenshots
-            cypress/videos
-        continue-on-error: true # Prevent pipeline failure if files don't exist
