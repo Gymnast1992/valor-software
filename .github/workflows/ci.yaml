@@ -1,15 +1,23 @@
-name: E2E on Chrome
+name: Cypress Tests
+
 on:
+  push:
+    branches: [ main, master ]
   pull_request:
-    types: [opened, reopened, edited, synchronize]
+    branches: [ main, master ]
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-20.04
-    # let's make sure our tests pass on Chrome browser
-    name: E2E on Chrome
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: cypress-io/github-action@v5
-        with:
-          browser: chrome
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Cypress
+        run: npx cypress install
+
+      - name: Run Cypress tests
+        run: npx cypress open
