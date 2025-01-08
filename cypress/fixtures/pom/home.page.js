@@ -6,7 +6,7 @@ class HomePage {
     get supportEmail() {return cy.contains(email)};
     get humburgerMenu() {return cy.get(".hamburger-react")};
     get btnBlog() {return cy.contains("Blog")};
-    get firstBlogListing() {return cy.get("._list-block_1eio8_14 > :nth-child(1)")};
+    get firstBlogListing() {return cy.get('[class="_article-block_1eio8_22"] ').eq(0)};
     get headerSection() {return cy.get("header ul li")};
 
     verifyTheText(text){
@@ -33,7 +33,7 @@ class HomePage {
         this.btnBlog.click();
     }
 
-    isFirstBlogListingVisible() {
+    isVisibleFirstBlogListing() {
         this.firstBlogListing.should("be.visible");
     }
 

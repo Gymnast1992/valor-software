@@ -1,4 +1,4 @@
-import HomePage from "../fixtures/pom/homepage";
+import HomePage from "../fixtures/pom/home.page";
 import Credentials from "../fixtures/data/credentials.json";
 
 describe("Homepage", () => {
@@ -23,7 +23,7 @@ describe("Homepage", () => {
   it("TC04, Should navigate to the Blog section and verify the first listing", () => {
     HomePage.clickOnTheHumburgerMenu();
     HomePage.clickOnTheBtnBlog();
-    HomePage.isFirstBlogListingVisible();
+    HomePage.isVisibleFirstBlogListing();
   });
 
   it("TC05, Should verify the length of the listings in the header", () => {
