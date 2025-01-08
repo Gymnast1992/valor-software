@@ -8,7 +8,7 @@ describe("Homepage", () => {
 
   it("TC01, Should verify the text and the name on the homepage", () => {
     HomePage.verifyTheText(Credentials.text);
-    HomePage.verifyTheName(Credentials.name);
+    HomePage.verifyTheName(Credentials.nameGDE);
   });
 
   it("TC02, Should verify the length of side-bar pages", () => {
