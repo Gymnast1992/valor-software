@@ -35,6 +35,8 @@ npm install cypress --save-dev
 
     1. npx cypress open ;
     2. Navigate to e2e/homepage.cy.js ;
+                   e2e/get-in-touch.cy.js ;
+                   e2e/careers.cy.js ;
 
 # CREDENTIALS:
   Navigate to cypress/fixtures/data/credentials.json ;
