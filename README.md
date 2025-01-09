@@ -6,7 +6,7 @@ Results, not excuses !
 
 Overview:
 
-This repository contains automated end-to-end tests for the Valor-Software project using Cypress framework. The test suite covers various homepage scenarios ;
+This repository contains automated end-to-end tests for the Valor-Software project using Cypress framework. The test suite covers various homepage scenarios, blogs and get in touch scenarious ;
 
 # Before running the tests, ensure the following tools are installed:
 
